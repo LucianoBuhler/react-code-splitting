@@ -1,0 +1,94 @@
+.navbar {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #333;
+  color: #fff;
+  padding: 5px 20px;
+  z-index: 1000;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.navbar-links li a:hover {
+  color: #00aaff;
+}
+
+/* Menu Toggle for Mobile */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 0.3rem;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-links {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #333;
+    width: 100%;
+    max-width: 200px;
+    height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 0.75rem;
+  }
+
+  .navbar-links.active {
+    height: 300px;
+  }
+
+  .navbar-links li {
+    margin: 1.1rem 0;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+
+  /* Animation for Toggle */
+  .navbar-toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .navbar-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
